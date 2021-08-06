@@ -6,6 +6,7 @@
 #define NewLine printf("\n")
 #define Pause system("pause")
 #define Clear system("cls")
+#define Imuplse 6400		//Chech on the electric meter it is given as impulse 340.../kWh
 
 
 void animation(){
@@ -35,7 +36,7 @@ void Load(float pulse){
 
 	float result, energyPerDay,energyPerMonth,cost;
 
-	result = (pulse*60/6400)*1000;
+	result = (pulse*60/Imuplse)*1000;
 	color("yellow");
 	printf("Total load is %0.2f Watts\n",result );
 	NewLine;
@@ -52,7 +53,7 @@ void Load(float pulse){
 	NewLine;
 	color("cyan");
 
-	float slab_1 = 1.54;
+	float slab_1 = 1.54;	// Slab rates can be find out from electric department
 	float slab_2 = 2;
 	float slab_3 = 3.5;
 	float duty = 1.15;
